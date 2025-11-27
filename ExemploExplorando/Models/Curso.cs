@@ -33,7 +33,7 @@ namespace ExemploExplorando.Models
             for (int count = 0; count < Alunos.Count; count++)
             {
               //string texto = "N° " + count + " - " + Alunos[count].NomeCompleto;  //concatenação de string usa o " + " para junção
-              string texto = $"N° {count} - {Alunos[count].NomeCompleto}"; // interpolação de string, usa o " $ " e o " {valores mudam} "
+              string texto = $"N° {count + 1} - {Alunos[count].NomeCompleto}"; // interpolação de string, usa o " $ " e o " {valores mudam} "
               Console.WriteLine(texto);  
             }
 
