@@ -1,0 +1,91 @@
+--SELECT COUNT(*) QunatidadeProdutos FROM Produtos
+
+--SELECT COUNT(*) QuantidadeProdutosTamanhoM FROM Produtos WHERE Tamanho = 'M'
+
+--SELECT
+--	Nome + ',Cor: ' + Cor + ' - ' + Genero NomeProduto // concatenação de colunas
+--FROM Produtos
+
+--SELECT // deixar tudo maiusculo e tudo minusculo
+--	Nome + ',Cor: ' + Cor + ' - ' + Genero NomeProdutoCompleto,
+--	UPPER(Nome) Nome,
+--	LOWER(Cor) Cor
+--FROM Produtos
+
+-- adiciona coluna 
+--AlTER TABLE Produtos
+--ADD DataCadastro DATETIME2
+
+-- remove coluna
+--AlTER TABLE Produtos
+--DROP COLUMN DataCadastro 
+
+-- seta a hora atual para uma coluna
+--UPDATE Produtos SET DataCadastro = GETDATE()
+
+-- formata a hora e data 
+--SELECT
+--	Nome + ',Cor: ' + Cor + ' - ' + Genero NomeProdutoCompleto,
+--	UPPER(Nome) Nome,
+--	LOWER(Cor) Cor,
+--	FORMAT(DataCadastro, 'dd-MM-yyyy HH:mm') Data
+--FROM Produtos
+
+-- agrupanado, selecionando tamanho, colocando que diferente de 'vazio*' e ordem descrescente
+SELECT
+	Tamanho,
+	COUNT(*) Quantidade
+FROM Produtos
+WHERE Tamanho <> '' -- sinal de diferente serve o != também
+GROUP BY Tamanho
+ORDER BY Quantidade DESC
+
+-- criação de tabela sempre usar PRIMARY KEY IDENTITY para ter chave primaria
+SELECT * FROM Clientes
+
+CREATE TABLE Enderecos (
+	Id int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	IdCliente int NULL,
+	Rua varchar(255) NULL,
+	Bairro varchar(255) NULL,
+	Cidade varchar(255) NULL,
+	Estado char(2) NULL,
+
+	CONSTRAINT FK_Enderecos_Clientes FOREIGN KEY(IdCliente)
+	REFERENCES Clientes(Id)
+)
+
+
+--SELECT * FROM Clientes
+
+--CREATE TABLE Enderecos (
+--	Id int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+--	IdCliente int NULL,
+--	Rua varchar(255) NULL,
+--	Bairro varchar(255) NULL,
+--	Cidade varchar(255) NULL,
+--	Estado char(2) NULL,
+
+--	CONSTRAINT FK_Enderecos_Clientes FOREIGN KEY(IdCliente)
+--	REFERENCES Clientes(Id)
+--)
+
+--INSERT INTO Enderecos VALUES (4, 'Rua Teste', 'Bairro teste', 'Cidade teste', 'MG')
+
+SELECT * FROM Clientes WHERE Id = 4
+SELECT * FROM Enderecos WHERE IdCliente = 4
+
+SELECT
+	C.Nome,
+	C.Sobrenome,
+	C.Email,
+	E.Rua,
+	E.Bairro,
+	E.Cidade,
+	E.Estado
+FROM
+	Clientes C
+INNER JOIN Enderecos E ON C.Id = E.IdCliente -- faz junção de 2 tabelas com base
+-- no id da tabela Clientes
+WHERE C.Id = 4
+
