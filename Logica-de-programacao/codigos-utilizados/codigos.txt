@@ -1,0 +1,407 @@
+// Laços de repetição
+
+//do while - faça enquanto - primeiro faz depois verifica
+let i = 3
+
+do {
+    console.log("ola")
+    i++
+} while(i < 3)
+
+//resultado vai ser 1 vez "ola" no console
+
+//while - enquanto uma condição for verdadeira, ele executa o bloco de código
+let i = 0;
+
+while(i < 3){
+    console.log("ola")
+    i++
+}
+
+//for - repetir um bloco de codigo ate que uma condicao seja atingida
+//0 também e contado como um número no interador " i "
+let pontosDeVida = 0
+
+for(let i = 0; i <= 10; i++){
+    pontosDeVida += 1
+    console.log("Tomou poção mágica " +i)
+} 
+
+console.log(pontosDeVida + " Totais ")
+
+//for - repetir um bloco de codigo ate que uma condicao seja atingida
+for (let contador = 0; contador <4; contador++) {
+    console.log(contador)
+    console.log("aumentando o contador")
+}
+
+// geranmente usando " i "
+for (let i = 0; i <4; i++) {
+    console.log(i)
+    console.log("aumentando o contador")
+}
+
+----------------------------------------------
+//Estrutura de decisão
+// switch / case / break / default
+
+// também pode ser usado com números
+let num = 1
+
+switch (num) {
+    case 1:
+        console.log("Suco de Laranja")
+        break
+
+    case 2:
+    case 3:
+        console.log("vitamina")
+        break
+
+    case 4:
+        console.log("suco de maçã")
+        break
+
+    default:
+        console.log("suco genérico")
+}
+
+let fruta = "limão"
+
+switch (fruta) {
+    case "laranja":
+        console.log("suco de laranja")
+        break
+    case "banana":
+        console.log("vitamina de banana")
+        break
+    case "maçã":
+        console.log("suco de maçã")
+        break
+
+    default:
+        console.log("suco genérico")
+}
+
+let fruta = "banana"
+
+switch (fruta) {
+    case "laranja":
+        console.log("suco de laranja")
+        break
+    case "banana":
+        console.log("vitamina de banana")
+        break
+    case "maçã":
+        console.log("suco de maçã")
+        break
+}
+
+let fruta = "banana"
+
+switch (fruta) {
+    case "laranja":
+        console.log("suco de laranja")
+
+    case "banana":
+        console.log("vitamina de banana")
+    
+    case "maçã":
+        console.log("suco de maçã")
+}
+
+-----------------------------------------------------------------
+// Condicionais
+
+// if, else if, else
+let nivelDeFome = 1
+
+if (nivelDeFome === 1) {
+    console.log("pouca fome")
+} else if (nivelDeFome === 2) {
+    console.log("muita fome")
+} else {
+    console.log("você comeria mais que o pica pau")
+}
+
+// se - if / senao - else
+let possuiOvos = false
+let itensComprados = ""
+
+if (possuiOvos) {
+    itensComprados = "leite"
+}
+else{
+    console.log("passou na sessão de congelados")
+    itensComprados = "Lasanha"
+}
+
+console.log("item comprado: " + itensComprados)
+
+// se - if
+let possuiOvos = true
+let itensComprados = ""
+
+if (possuiOvos) {
+    itensComprados = "leite"
+}
+
+console.log("item comprado: " + itensComprados)
+
+-----------------------------------------------
+// Operadores lógicos
+
+// NOT (!) - nega uma afirmação
+let tempo = "chuva"
+let horario = 8
+
+let resultado = !((tempo !== "chuva") && (horario > 6)) //mudando polaridade para true
+
+console.log(resultado) 
+
+// NOT (!) - nega uma afirmação
+let tempo = "chuva"
+let resultado = tempo !== "chuva"
+console.log(resultado) // false
+
+// NOT (!) - nega uma afirmação
+let tempo = "chuva"
+let resultado = tempo !== "chuva"
+console.log(!resultado) // com a ! inverte para true
+
+// OR ( || ) - nosso boneco só pode sair se tiver sem chuva ou com guarda-chuva
+let tempo = "chuva"
+let item = "pá"
+let podeSair = (tempo !== "chuva" || item === "guarda chuva")
+
+console.log("Nosso personagem pode sair ? " + podeSair) // false
+
+let tempo = "chuva"
+let item = "guarda chuva"
+let podeSair = (tempo !== "chuva" || item === "guarda chuva")
+
+console.log("Nosso personagem pode sair ? " + podeSair) // true
+
+// AND ( && ) - 100 moedas coletadas E 1 item estrela
+let moedasColetadas = 100
+let item = "estrela"
+let resultado = (moedasColetadas === 100) && (item === "estrela")
+console.log(resultado) // true
+
+// AND ( && ) - 100 moedas coletadas E 1 item estrela
+let moedasColetadas = 99
+let item = "estrela"
+let resultado = (moedasColetadas === 100) && (item === "Estrela")
+console.log(resultado) // false
+
+// AND ( && )
+let idade = 18
+let vistoVerificado = true
+let resultado = (idade >= 18) && (vistoVerificado === true)
+console.log(resultado)
+
+---------------------------------------------------------------
+// operadores de compração
+
+// com texto tomar cuidade que maiusculas e minusculas importam
+let texto = "Rodolfo"
+console.log(texto === "rodolfo")
+
+let idadeDeCorte = 50
+let idadeUsuario = 45
+
+let resultadoEhTerceiraIdade = idadeDeCorte <= idadeUsuario
+
+console.log(resultadoEhTerceiraIdade)
+
+let idadeMinima = 18;
+let idadeUsuario = 18;
+let idadePermitidaValida = idadeUsuario >= idadeMinima;
+
+console.log(idadePermitidaValida)
+
+let CPFPermitido = "222.555.333-01"
+let CPFDoUsuario = "222.555.333-02"
+
+let ehBloqueado = CPFDoUsuario !== CPFPermitido
+
+console.log("É um usuário invalido ? " + ehBloqueado)
+
+let cpfBloqueado = "123.445.222-45"
+let cpfUsuario = "222.111.222-09"
+let ehCPFBloqueado = cpfUsuario === cpfBloqueado
+
+console.log("O usuário pode embarcar ? " + ehCPFBloqueado)
+
+// = é atribuição
+// == é para comparar o valor
+// === é para comparar o valor e o formato do conteúdo
+// != é diferente no valor
+
+let numero = "1"
+console.log(numero == 1)
+
+//guardar o valor em uma variavél de resultado, true ou false
+let marca = "Apple"
+let resultado = marca === "Samsung"
+
+console.log(resultado)
+
+--------------------------------------
+// escopo de operação aritimetica
+
+let resultado = 2 * ((5 + 5) - 10)
+
+console.log(resultado)
+
+// incremento e decremento
+
+let contador = 1
+// '++' incremento
+contador++
+contador++
+
+// '--' decremento
+contador--
+contador--
+
+console.log(contador)
+
+-------------------------------------
+// Operadores
+
+let preco = 10
+preco += 5 // preco = preco + 5 forma abreviada
+preco -= 5 // preco = preco - 5
+
+console.log(preco)
+
+let idade = 30
+console.log("Valor da minha variavél " + idade)
+
+idade = 30 + 2
+console.log("Operação de adição " + idade)
+
+idade = 30 - 2
+console.log("Operação de subitração " + idade)
+
+let primeiroNumero = 1023;
+let segundoNumero = 23
+console.log("Resultado da subitração é " + (primeiroNumero - segundoNumero))
+
+let precoProduto = 100.99
+let valorComTaxa = precoProduto * 2
+console.log("Valor com taxa é " + valorComTaxa)
+
+let multiplicador = 4
+let multiplicando = 12
+let produto = multiplicador * multiplicando
+console.log("Resultado da multiplicação é " + produto)
+
+let notaDoMercado = 50
+console.log("Operação de divisão " + notaDoMercado / 2)
+
+let calculo = 10 % 3
+console.log("Operação de módulo(resto da operação) é " + calculo)
+
+------------------------------------------------------
+
+let nomesPokemon = ["Pikachu" , "Charmander" , "Bulbasaur"];
+
+// matriz
+let timePokemon = [
+    ["Pikachu" , "M" , "1"],
+    ["Charmander" , "F" , "3"],
+]
+
+console.log(timePokemon.length)
+
+let nomesPokemon = ["Pikachu" , "Charmander" , "Bulbasaur"];
+
+// matriz
+let timePokemon = [
+    ["Pikachu" , "M" , "1"],
+    ["Charmander" , "F" , "3"],
+]
+
+console.log("O pokemon " + timePokemon[1][0] + " é do sexo " + timePokemon[1][1] + 
+" e está no nível " + timePokemon[1][2]
+)
+
+let nomesPokemon = ["Pikachu" , "Charmander" , "Bulbasaur"];
+
+// apaga primeiro e último item do array
+nomesPokemon.shift()
+nomesPokemon.pop()
+
+console.log(nomesPokemon)
+
+// escolhe uma posição do array
+console.log(nomesPokemon[1])
+
+// nome, idade, numero de telefone, cpf, endereço, recebe penção
+// string = armazenar textos
+// number = armazenar números
+// boolean = armazenar valores lógicos (true ou false)
+
+let nomePessoa = "Josicreide do Pythinho"
+let idade = 115
+let numeroTelefone = "11-984713388"
+let cpf = "312.122.312-45"
+let endereco = "Rua dos limoeiros, nº 75, bairro Jaguatirica, SP"
+let recebePencao = true
+
+//celular
+let marcaCelular = "Samsung"
+let modeloCelular = "Galaxy S21 FE"
+let anoFabricacao = 2021
+let temCartaoMemoria = true
+
+//relogio portatil
+let marcaRelogio = "Abreu"
+let modeloRelogio = "Relogio de Mesa"
+let relogioLigado = false
+
+//pokemon
+let nomePokemon = "pikachu"
+let pokemonSexo = "M"
+
+let nivelPokemon = 20
+let pontosDeVidaPokemon = 45
+
+let selecionavel = true
+
+let poteCafe = "Café Pilão"
+let poteAcucar = "Açucar Cristal"
+let poteBiscoito = "Biscoito Maizena"
+const messagemDaVovo = "Na cozinha da vovó hoje tem: "
+
+console.log(messagemDaVovo +
+    poteCafe + " - " +
+    poteAcucar + " - " +
+    poteBiscoito
+)
+
+poteCafe = "Café 3 corações"
+console.log(messagemDaVovo +
+    poteCafe + " - " +
+    poteAcucar + " - " +
+    poteBiscoito
+)
+
+// constante e um valor que se repeti mas não pode ser alterado
+const notificacao = "Pokenmon Go diz:"
+
+//saída
+console.log(notificacao + " tem um novo pokemon na região.")
+console.log(notificacao + " você foi derrotado por um líder")
+
+//saida no console
+console.log("Digite o nome do seu jogador:")
+
+//declara uma variável
+let nickname = "Rodolfo"
+
+//concatenando uma mensagem fixa + uma variável
+console.log("Bem vindo " + nickname)
+console.log(nickname + " entrou no servidor.")
