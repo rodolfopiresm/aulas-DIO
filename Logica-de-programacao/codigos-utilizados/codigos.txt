@@ -1,3 +1,118 @@
+// Funções com retorno
+
+let userName = getFirstName("Rodolfo-Pires-Maia", "-")
+console.log("Seja bem vindo " + userName)
+
+let userName = getFirstName("Rodolfo Pires Maia", " ")
+console.log("Seja bem vindo " + userName)
+
+function getFirstName(name, splitChar){
+    let firstName = name.split(" ")[0]
+    return firstName
+}
+
+let resultado = soma(5,5)
+
+console.log("O resultado dessa função é " + resultado)
+
+function soma(numA, numB){
+    let somatorio = numA + numB
+    console.log(somatorio)
+    return somatorio
+}
+
+// Funções com parâmetros
+
+// interpolação de strings javascritp
+createStringConnection("db_products", "rodolfo", "1234")
+
+function createStringConnection(databaseName, user, pass){
+    console.log(`connect:DBCONNECT;user={user};pass=${pass};initial_database=${databaseName}`)
+}
+
+torrar("pão na chapa", "Rodolfo") // deixe sempre o opcional como ultimo
+
+function torrar(pao, nome, valor = 9.99){ 
+    nome = "Rodolfo"
+    console.log("torrada feita com " + pao)
+    console.log("ela é um pedido de " + nome)
+    console.log("O valor total é " + valor)
+}
+
+
+torrar("pão integral", "Rodolfo" , 10.90)//pega o padrão passado fora da função, se não tiver entrao determinado na função
+
+function torrar(pao, nome = "Cliente", valor){
+    nome = "Rodolfo"
+    console.log("torrada feita com " + pao)
+    console.log("ela é um pedido de " + nome)
+    console.log("O valor total é " + valor)
+}
+
+torrar("pão de forma" , "Rodolfo") // atribuindo conteudo para paramentro "pao"
+torrar("pão integral" , "Pires")
+var nome // var serve para uma variavel global, não recomendado, pois fica visivel para todos
+
+function torrar(pao, nome){
+    nome = "Rodolfo"
+    console.log("torrada feita com " + pao)
+    console.log("ela é um pedido de " + nome)
+}
+
+
+// Função - nunca usar número para iniciar uma função
+
+function enviarDados(){
+    let nomeDoBanco = "banco-de-dados"
+    console.log("salvando dados em :" + nomeDoBanco)
+
+    if( 3 === 3){
+        console.log("senha valida")
+    }
+}
+
+mainSaveData()
+
+function mainSaveData(){
+    getData()
+    checkValues()
+    sendToDatabase()
+}
+
+// função que pega todos os dados
+function getData(){
+    if (1<3) {
+        console.log("numero encontrado")
+        console.log("numero encontrado")
+        console.log("numero encontrado")
+    }
+}
+
+// função que verifica os dados
+function checkValues(){
+    console.log("validando dados")
+}
+
+// função que envia os dados
+function sendToDatabase(){
+    console.log("cadastrando dados")
+}
+
+//função - pode ser chamada dentro de outra função
+torrar()
+
+function torrar(){
+    console.log("torrando pão")
+    injetarPao()
+}
+
+function injetarPao(){
+    console.log("preparando para injetar o pão")
+    console.log("finalizado")
+}
+
+
+------------------------------------------------------
 // Laços de repetição
 
 //do while - faça enquanto - primeiro faz depois verifica
