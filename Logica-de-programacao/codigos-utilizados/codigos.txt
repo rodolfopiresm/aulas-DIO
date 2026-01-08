@@ -1,3 +1,106 @@
+//Classes e objetos
+
+//Classe com metodo
+class formaDeBolo{
+    constructor(saborDaMassa, saborRecheio){
+        this.saborDaMassa = saborDaMassa;
+        this.saborRecheio = saborRecheio;
+    }
+
+    escrever(){
+        console.log(`Um delicioso bolo de ${this.saborDaMassa} com recheio de ${this.saborRecheio}`)
+    }
+
+    assar(){
+        console.log("Bolo assando de " + this.saborDaMassa);
+    }
+}
+
+let boloFesta = new formaDeBolo("chocolate", "nutella");
+let boloPremium = new formaDeBolo("baunilha", "coco");
+
+boloFesta.escrever();
+boloPremium.escrever();
+boloPremium.assar();
+
+//Classe sempre tem um constructor
+class formaDeBolo{
+    constructor(saborDaMassa, saborRecheio){
+        this.saborDaMassa = saborDaMassa;
+        this.saborRecheio = saborRecheio;
+    }
+}
+
+let boloFesta = new formaDeBolo("massa de chocolate", "recheio de nutella");
+
+console.log(boloFesta);
+
+
+//JSON - JavaScript Object Notation
+//Composto por chave e valor com o objetivo de transferir dados
+
+// correção para percorrer os objetos dentro do array de products
+let invoice = {
+    name: "Rodolfo",
+    age: 32,
+    products: {
+        0: ["mouse 2xwm", 29.90],
+        1: ["teclado mecânico", 129.99],
+        2: ["monitor 4k", 899.90],
+        3: ["headset gamer", 199.90]
+    },
+    taxes: "98.90"
+}
+generateInvoice(invoice);
+
+function generateInvoice(invoice) {
+    console.log(`O comprador é ${invoice.name}`);
+    console.log(`A idade é ${invoice.age}`);
+    console.log("--------------");
+
+    for(let index in invoice.products) {
+        let [productName, productPrice] = invoice.products[index];
+        console.log(`- ${productName}: R$ ${productPrice}`);
+    }
+}
+
+// com o JSON
+let invoice = {
+    name: "Rodolfo",
+    age: 32,
+    products: {
+        0: ["mouse 2xwm", 29.90],
+        1: ["teclado mecânico", 129.99],
+        2: ["monitor 4k", 899.90]
+    },
+    taxes: "98.90"
+}
+generateInvoice(invoice);
+
+function generateInvoice(invoice) {
+    console.log(`O comprador é ${invoice.name}`);
+    console.log(`A idade é ${invoice.age}`);
+    console.log("--------------");
+    console.log(`Os produtos são ${invoice.products}`);
+}
+
+
+// sem o JSON
+let name = "Rodolfo";
+let age = 32;
+let products = ["mouse 2xwm", "Teclado mecânico", "Monitor"];
+let productsValues = [29.90, 129.99, 899.99];
+
+generateInvoice(name, products, productsValues, age);
+
+function generateInvoice(name, products, productsValues, age) {
+    console.log("O comprador é " + name);
+    console.log("A idade é " + age);
+    console.log("--------------");
+    console.log("O produto é " + products[0]);
+    console.log("O valor é " + productsValues[0]);
+}
+
 // Funções com retorno
 
 let userName = getFirstName("Rodolfo-Pires-Maia", "-")

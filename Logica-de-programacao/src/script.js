@@ -1,9 +1,22 @@
-//do while - faça enquanto - primeiro faz depois verifica
-let i = 3
+//Classe com metodo
+class formaDeBolo{
+    constructor(saborDaMassa, saborRecheio){
+        this.saborDaMassa = saborDaMassa;
+        this.saborRecheio = saborRecheio;
+    }
 
-do {
-    console.log("ola")
-    i++
-} while(i < 3)
+    escrever(){
+        console.log(`Um delicioso bolo de ${this.saborDaMassa} com recheio de ${this.saborRecheio}`)
+    }
 
-//resultado vai ser 1 vez "ola" no console
+    assar(){
+        console.log("Bolo assando de " + this.saborDaMassa);
+    }
+}
+
+let boloFesta = new formaDeBolo("chocolate", "nutella");
+let boloPremium = new formaDeBolo("baunilha", "coco");
+
+boloFesta.escrever();
+boloPremium.escrever();
+boloPremium.assar();
